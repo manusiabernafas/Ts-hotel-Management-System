@@ -1,0 +1,45 @@
+<div class="brutal-dialog-card">
+  <div class="dialog-header header-pink">
+    <div class="window-controls">
+      <span class="control-dot dot-red"></span>
+      <span class="control-dot dot-yellow"></span>
+      <span class="control-dot dot-green"></span>
+    </div>
+    <div class="dialog-title">👤 EDIT USER PROFILE</div>
+    <div style="width: 20px;"></div>
+  </div>
+
+  <form (ngSubmit)="editar()" class="dialog-body">
+    <div class="mb-3">
+      <label for="username_edit" class="form-label">Username</label>
+      <input type="text" class="form-control" id="username_edit" [(ngModel)]="user.username" name="username">
+    </div>
+
+    <div class="mb-3">
+      <label for="password_edit" class="form-label">Password</label>
+      <input type="password" class="form-control" id="password_edit" [(ngModel)]="user.password" name="password">
+    </div>
+
+    <div class="mb-3">
+      <label for="mail_edit" class="form-label">Email Address</label>
+      <input type="email" class="form-control" id="mail_edit" [(ngModel)]="user.mail" name="mail">
+    </div>
+
+    <div class="row">
+      <div class="col-md-6 mb-3">
+        <label for="sexo_edit" class="form-label">Gender</label>
+        <input type="text" class="form-control" id="sexo_edit" [(ngModel)]="user.sexo" name="sexo">
+      </div>
+      <div class="col-md-6 mb-3">
+        <label for="conectado_edit" class="form-label">Connected</label>
+        <input type="text" class="form-control" id="conectado_edit" [(ngModel)]="user.conectado" name="conectado">
+      </div>
+    </div>
+
+    <div class="d-flex justify-content-end gap-2 mt-4">
+      <button type="submit" class="btn btn-primary">
+        <i class="bi bi-person-check-fill"></i> Update User
+      </button>
+    </div>
+  </form>
+</div>

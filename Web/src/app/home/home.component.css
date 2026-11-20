@@ -1,0 +1,126 @@
+.brutal-home-container {
+  max-width: 1300px;
+  margin: 30px auto;
+  padding: 0 20px 50px 20px;
+}
+
+.brutal-hero-banner {
+  background-color: var(--brutal-blue-light, #E7F5FF);
+  border: 3px solid #121212;
+  border-radius: 16px;
+  box-shadow: 6px 6px 0px #121212;
+  padding: 30px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--brutal-pink, #FFB3C6);
+  border: 2px solid #121212;
+  border-radius: 50px;
+  padding: 4px 14px;
+  font-family: var(--font-mono, monospace);
+  font-weight: 800;
+  font-size: 0.75rem;
+  letter-spacing: 0.5px;
+  box-shadow: 2px 2px 0px #121212;
+}
+
+.badge-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #121212;
+}
+
+.hero-title {
+  font-family: var(--font-main, 'Space Grotesk', sans-serif);
+  font-weight: 900;
+  font-size: 2.4rem;
+  line-height: 1.15;
+  color: #121212;
+  margin-top: 10px;
+}
+
+.hero-desc {
+  font-size: 1.05rem;
+  color: #333333;
+  max-width: 700px;
+  margin-top: 10px;
+  line-height: 1.5;
+}
+
+.tag-item {
+  font-family: var(--font-mono, monospace);
+  font-weight: 700;
+  font-size: 0.8rem;
+  padding: 6px 12px;
+  border: 2px solid #121212;
+  border-radius: 8px;
+  box-shadow: 2px 2px 0px #121212;
+}
+
+.tag-pink {
+  background-color: var(--brutal-pink, #FFB3C6);
+  color: #121212;
+}
+
+.tag-blue {
+  background-color: var(--brutal-blue, #A2D2FF);
+  color: #121212;
+}
+
+.tag-yellow {
+  background-color: var(--brutal-yellow, #FEF08A);
+  color: #121212;
+}
+
+.hero-sticker-card {
+  background-color: var(--brutal-pink, #FFB3C6);
+  border: 3px solid #121212;
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 5px 5px 0px #121212;
+  transform: rotate(2deg);
+  transition: transform 0.2s ease;
+}
+
+.hero-sticker-card:hover {
+  transform: rotate(0deg) scale(1.03);
+}
+
+.sticker-heading {
+  font-family: var(--font-mono, monospace);
+  font-weight: 800;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+}
+
+.sticker-highlight {
+  font-family: var(--font-main, 'Space Grotesk', sans-serif);
+  font-weight: 900;
+  font-size: 2.4rem;
+  color: #121212;
+  line-height: 1.1;
+  margin: 6px 0;
+}
+
+.sticker-caption {
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+.section-title {
+  font-family: var(--font-main, 'Space Grotesk', sans-serif);
+  font-weight: 900;
+  font-size: 1.7rem;
+  letter-spacing: -0.5px;
+}
+
+.section-subtitle {
+  font-weight: 600;
+  font-size: 0.95rem;
+}

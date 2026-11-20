@@ -1,0 +1,46 @@
+<nav class="navbar navbar-expand-lg brutal-navbar">
+  <div class="container-fluid px-3 px-md-4">
+    <!-- Brand Logo -->
+    <a class="navbar-brand brutal-brand" [routerLink]="['/home']">
+      <span class="brand-icon">🏨</span>
+      <span class="brand-text">TS HOTEL</span>
+      <span class="brand-tag">SYSTEM</span>
+    </a>
+
+    <!-- Mobile Toggler -->
+    <button class="navbar-toggler brutal-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="bi bi-list fs-2"></i>
+    </button>
+
+    <!-- Navigation Links -->
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav gap-2 align-items-center mt-3 mt-lg-0">
+        <li class="nav-item">
+          <a class="nav-link brutal-nav-link active" [routerLink]="['/home', 'default']">
+            <i class="bi bi-house-door-fill me-1"></i> Rooms
+          </a>
+        </li>
+        <li class="nav-item" *ngIf="servicio.isLoggedIn()">
+          <a class="nav-link brutal-nav-link btn-pastel-blue" [routerLink]="['/home', 'reserve']">
+            <i class="bi bi-bookmark-star-fill me-1"></i> My Bookings
+          </a>
+        </li>
+        <li class="nav-item" *ngIf="!servicio.isLoggedIn()">
+          <a class="nav-link brutal-nav-link btn-pastel-pink" [routerLink]="['/home', 'login']">
+            <i class="bi bi-box-arrow-in-right me-1"></i> Login
+          </a>
+        </li>
+        <li class="nav-item" *ngIf="!servicio.isLoggedIn()">
+          <a class="nav-link brutal-nav-link btn-pastel-blue" [routerLink]="['/home', 'register']">
+            <i class="bi bi-person-plus-fill me-1"></i> Register
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link brutal-nav-link admin-pill" [routerLink]="['/admin']">
+            <i class="bi bi-shield-lock-fill me-1"></i> Admin Panel
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,129 @@
+.brutal-reserve-page {
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 0 20px 60px 20px;
+}
+
+.page-title {
+  font-family: var(--font-main, 'Space Grotesk', sans-serif);
+  font-weight: 900;
+  font-size: 2rem;
+  letter-spacing: -0.5px;
+}
+
+.empty-state-brutal {
+  background-color: #FFFFFF;
+  border: 3px solid #121212;
+  border-radius: 14px;
+  box-shadow: 6px 6px 0px #121212;
+  margin: 40px auto;
+  max-width: 600px;
+}
+
+.empty-icon {
+  font-size: 3.5rem;
+}
+
+.booking-dialog-container {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+.brutal-window-card {
+  width: 100%;
+  max-width: 520px;
+  background-color: #FFFFFF;
+  border: 3.5px solid #121212;
+  border-radius: 14px;
+  box-shadow: 8px 8px 0px #121212;
+  overflow: hidden;
+}
+
+.window-header {
+  border-bottom: 3px solid #121212;
+  padding: 12px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-pink {
+  background-color: var(--brutal-pink, #FFB3C6);
+}
+
+.window-controls {
+  display: flex;
+  gap: 6px;
+}
+
+.control-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 1.5px solid #121212;
+}
+
+.dot-red { background-color: #FFA8A8; }
+.dot-yellow { background-color: #FEF08A; }
+.dot-green { background-color: #B7E4C7; }
+
+.window-title {
+  font-family: var(--font-mono, monospace);
+  font-weight: 800;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+  color: #121212;
+}
+
+.window-body {
+  padding: 24px;
+  background-color: #FFFFFF;
+}
+
+.room-summary-box {
+  background-color: var(--brutal-blue-light, #E7F5FF);
+  border: 2.5px solid #121212;
+  border-radius: 10px;
+  padding: 16px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: 3px 3px 0px #121212;
+}
+
+.summary-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.summary-label {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #555555;
+}
+
+.summary-value {
+  font-family: var(--font-main, 'Space Grotesk', sans-serif);
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #121212;
+}
+
+.price-text {
+  color: var(--brutal-blue-dark, #2563EB);
+}
+
+.summary-divider {
+  width: 2px;
+  height: 35px;
+  background-color: #121212;
+}
+
+.btn-secondary {
+  background-color: #E2E8F0 !important;
+  color: #121212 !important;
+}

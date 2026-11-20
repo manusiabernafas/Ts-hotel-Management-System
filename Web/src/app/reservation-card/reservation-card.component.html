@@ -1,0 +1,34 @@
+<div [id]="id" class="brutal-booking-card">
+  <!-- Card Header -->
+  <div class="booking-card-header">
+    <div class="booking-room-num">
+      <i class="bi bi-key-fill me-1"></i> ROOM #{{ id }}
+    </div>
+    <span class="badge-active-booking">ACTIVE BOOKING</span>
+  </div>
+
+  <!-- Card Body -->
+  <div class="booking-card-body">
+    <div class="booking-row">
+      <span class="booking-prop"><i class="bi bi-box-arrow-in-right text-primary me-2"></i>Check In:</span>
+      <span class="booking-val">{{ salida || 'Pending' }}</span>
+    </div>
+
+    <div class="booking-row">
+      <span class="booking-prop"><i class="bi bi-box-arrow-right text-danger me-2"></i>Check Out:</span>
+      <span class="booking-val">{{ entrada || 'Pending' }}</span>
+    </div>
+
+    <div class="booking-row" *ngIf="cantpersonas">
+      <span class="booking-prop"><i class="bi bi-people-fill text-info me-2"></i>Guests:</span>
+      <span class="booking-val">{{ cantpersonas }} Persons</span>
+    </div>
+
+    <div class="booking-divider"></div>
+
+    <div class="booking-price-row">
+      <span>Total Paid:</span>
+      <span class="booking-total-price">$ {{ Price }} USD</span>
+    </div>
+  </div>
+</div>

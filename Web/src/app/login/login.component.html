@@ -1,0 +1,130 @@
+<div *ngIf="dialogRef; else nomodal">
+  <div class="modal-overlay">
+    <div class="brutal-window-card">
+      <!-- Window Title Bar -->
+      <div class="window-header">
+        <div class="window-controls">
+          <span class="control-dot dot-red"></span>
+          <span class="control-dot dot-yellow"></span>
+          <span class="control-dot dot-green"></span>
+        </div>
+        <div class="window-title">🔑 LOGIN TO TS HOTEL</div>
+        <button type="button" class="btn-close-window" (click)="close()">✕</button>
+      </div>
+
+      <!-- Form Content -->
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="window-body">
+        <div class="mb-3">
+          <label for="modal-username" class="form-label">Username</label>
+          <div class="input-group-brutal">
+            <span class="input-icon"><i class="bi bi-person-fill"></i></span>
+            <input
+              type="text"
+              formControlName="username"
+              class="form-control"
+              id="modal-username"
+              placeholder="Enter your username"
+            />
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="modal-password" class="form-label">Password</label>
+          <div class="input-group-brutal">
+            <span class="input-icon"><i class="bi bi-key-fill"></i></span>
+            <input
+              type="password"
+              class="form-control"
+              formControlName="password"
+              id="modal-password"
+              placeholder="Enter your password"
+            />
+          </div>
+        </div>
+
+        <div *ngIf="error != null" class="alert alert-danger mb-3">
+          <i class="bi bi-exclamation-triangle-fill me-2"></i> {{ error }}
+        </div>
+        <div *ngIf="correct != null" class="alert alert-info mb-3">
+          <i class="bi bi-check-circle-fill me-2"></i> {{ correct }}
+        </div>
+
+        <div class="window-footer d-flex flex-wrap gap-2 justify-content-end mt-4">
+          <button type="submit" class="btn btn-primary">
+            <i class="bi bi-box-arrow-in-right"></i> Login
+          </button>
+          <button type="button" (click)="OpenRegister()" class="btn btn-success">
+            <i class="bi bi-person-plus"></i> Register
+          </button>
+          <button type="button" (click)="close()" class="btn btn-secondary">
+            Cancel
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<ng-template #nomodal>
+  <div class="standalone-login-container">
+    <div class="brutal-window-card mx-auto">
+      <!-- Window Title Bar -->
+      <div class="window-header">
+        <div class="window-controls">
+          <span class="control-dot dot-red"></span>
+          <span class="control-dot dot-yellow"></span>
+          <span class="control-dot dot-green"></span>
+        </div>
+        <div class="window-title">🔑 LOGIN TO TS HOTEL</div>
+        <div style="width: 20px;"></div>
+      </div>
+
+      <!-- Form Content -->
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="window-body">
+        <div class="mb-3">
+          <label for="username" class="form-label">Username</label>
+          <div class="input-group-brutal">
+            <span class="input-icon"><i class="bi bi-person-fill"></i></span>
+            <input
+              type="text"
+              formControlName="username"
+              class="form-control"
+              id="username"
+              placeholder="Enter your username"
+            />
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <div class="input-group-brutal">
+            <span class="input-icon"><i class="bi bi-key-fill"></i></span>
+            <input
+              type="password"
+              class="form-control"
+              formControlName="password"
+              id="password"
+              placeholder="Enter your password"
+            />
+          </div>
+        </div>
+
+        <div *ngIf="error != null" class="alert alert-danger mb-3">
+          <i class="bi bi-exclamation-triangle-fill me-2"></i> {{ error }}
+        </div>
+        <div *ngIf="correct != null" class="alert alert-info mb-3">
+          <i class="bi bi-check-circle-fill me-2"></i> {{ correct }}
+        </div>
+
+        <div class="window-footer d-flex flex-wrap gap-2 justify-content-end mt-4">
+          <button type="submit" class="btn btn-primary">
+            <i class="bi bi-box-arrow-in-right"></i> Login
+          </button>
+          <button type="button" (click)="OpenRegister()" class="btn btn-success">
+            <i class="bi bi-person-plus"></i> Register
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</ng-template>

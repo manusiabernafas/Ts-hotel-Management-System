@@ -1,0 +1,50 @@
+<div class="brutal-management-page">
+  <!-- Header Bar -->
+  <div class="section-top-bar mb-4">
+    <div>
+      <span class="badge-brutal-pink mb-2">HOTEL SUITES</span>
+      <h2 class="page-title m-0">ROOM INVENTORY MANAGEMENT</h2>
+    </div>
+    <button (click)="addrom()" class="btn btn-success btn-lg">
+      <i class="bi bi-plus-lg"></i> Add New Room
+    </button>
+  </div>
+
+  <!-- Rooms List -->
+  <div class="d-flex flex-column gap-3">
+    <div class="brutal-list-card" *ngFor="let item of rooms">
+      <div class="card-item-left">
+        <div class="room-icon-box" [ngClass]="{'box-reserved': item.reservada, 'box-available': !item.reservada}">
+          <i class="bi bi-door-closed-fill"></i>
+        </div>
+        <div class="room-main-info">
+          <div class="d-flex align-items-center gap-2">
+            <h4 class="room-title mb-0">Room #{{ item.id }}</h4>
+            <span [class]="item.reservada ? 'badge-status-reserved' : 'badge-status-available'">
+              {{ item.reservada ? 'BOOKED' : 'AVAILABLE' }}
+            </span>
+          </div>
+          <span class="room-meta text-muted">
+            <i class="bi bi-people-fill me-1"></i> Capacity: <strong>{{ item.cantdepersonas }} Persons</strong>
+          </span>
+        </div>
+      </div>
+
+      <div class="card-item-center">
+        <div class="price-badge-pill">
+          <span class="price-label">Rate:</span>
+          <span class="price-val">${{ item.precio }} <small>/night</small></span>
+        </div>
+      </div>
+
+      <div class="card-item-actions">
+        <button (click)="EditRoom(item.id)" class="btn btn-info btn-sm">
+          <i class="bi bi-pencil-square"></i> Edit
+        </button>
+        <button (click)="DeleteRom(item.id)" class="btn btn-danger btn-sm">
+          <i class="bi bi-trash3-fill"></i> Delete
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

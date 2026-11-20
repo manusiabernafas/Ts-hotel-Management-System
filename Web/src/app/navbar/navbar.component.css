@@ -1,0 +1,115 @@
+.brutal-navbar {
+  background-color: var(--brutal-pink, #FFB3C6);
+  border-bottom: 3px solid #121212;
+  box-shadow: 0 4px 0px #121212;
+  padding: 12px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.brutal-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: var(--brutal-blue, #A2D2FF);
+  border: 3px solid #121212;
+  border-radius: 8px;
+  padding: 6px 14px;
+  box-shadow: 3px 3px 0px #121212;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.brutal-brand:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0px #121212;
+}
+
+.brand-icon {
+  font-size: 1.5rem;
+}
+
+.brand-text {
+  font-family: var(--font-main, 'Space Grotesk', sans-serif);
+  font-weight: 800;
+  font-size: 1.25rem;
+  letter-spacing: -0.5px;
+  color: #121212;
+}
+
+.brand-tag {
+  background-color: #121212;
+  color: #FFF;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.brutal-toggler {
+  border: 3px solid #121212 !important;
+  background-color: var(--brutal-blue, #A2D2FF) !important;
+  border-radius: 8px !important;
+  box-shadow: 3px 3px 0px #121212 !important;
+  padding: 4px 10px !important;
+  color: #121212 !important;
+}
+
+.brutal-toggler:focus {
+  box-shadow: 1px 1px 0px #121212 !important;
+}
+
+.brutal-nav-link {
+  font-family: var(--font-main, 'Space Grotesk', sans-serif);
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #121212 !important;
+  background-color: #FFFFFF;
+  border: 2.5px solid #121212;
+  border-radius: 8px;
+  padding: 8px 16px !important;
+  box-shadow: 3px 3px 0px #121212;
+  transition: all 0.12s ease;
+  display: inline-flex;
+  align-items: center;
+}
+
+.brutal-nav-link:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0px #121212;
+  background-color: var(--brutal-blue-light, #E7F5FF);
+}
+
+.brutal-nav-link:active {
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0px #121212;
+}
+
+.btn-pastel-pink {
+  background-color: #FFFFFF;
+}
+
+.btn-pastel-pink:hover {
+  background-color: #FFC2D1 !important;
+}
+
+.btn-pastel-blue {
+  background-color: var(--brutal-blue, #A2D2FF) !important;
+}
+
+.btn-pastel-blue:hover {
+  background-color: #89c2fc !important;
+}
+
+.admin-pill {
+  background-color: #121212 !important;
+  color: #FFFFFF !important;
+  border-color: #121212 !important;
+}
+
+.admin-pill:hover {
+  background-color: #2e2e2e !important;
+  color: #A2D2FF !important;
+}

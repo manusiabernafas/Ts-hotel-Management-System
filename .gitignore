@@ -1,0 +1,27 @@
+# Dependencies
+node_modules/
+*/node_modules/
+
+# Production builds
+dist/
+*/dist/
+tmp/
+out-tsc/
+bazel-out/
+
+# Angular cache
+.angular/
+*/.angular/
+
+# Environment and sensitive keys
+.env
+*/.env
+*.env.local
+
+# IDE & OS files
+.vscode/
+.idea/
+.vs/
+.DS_Store
+Thumbs.db
+*.log

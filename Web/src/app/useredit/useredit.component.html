@@ -1,0 +1,51 @@
+<div class="brutal-management-page">
+  <!-- Header -->
+  <div class="section-top-bar mb-4">
+    <div>
+      <span class="badge-brutal-blue mb-2">USER DIRECTORY</span>
+      <h2 class="page-title m-0">REGISTERED GUESTS & STAFF</h2>
+    </div>
+    <div class="record-count-badge">
+      <i class="bi bi-person-lines-fill me-1"></i> {{ users.length }} Users
+    </div>
+  </div>
+
+  <!-- Users Grid / List -->
+  <div class="d-flex flex-column gap-3">
+    <div class="brutal-list-card" *ngFor="let item of users">
+      <div class="card-item-left">
+        <div class="avatar-box">
+          <i class="bi bi-person-fill"></i>
+        </div>
+        <div class="user-main-info">
+          <h4 class="user-name mb-1">{{ item.username }}</h4>
+          <span class="user-mail text-muted">
+            <i class="bi bi-envelope me-1"></i> {{ item.mail }}
+          </span>
+        </div>
+      </div>
+
+      <div class="card-item-center">
+        <div class="user-detail-pill">
+          <span class="pill-label">Age:</span>
+          <span class="pill-val">{{ item.edad || 'N/A' }}</span>
+        </div>
+        <div class="user-detail-pill">
+          <span class="pill-label">Status:</span>
+          <span [class]="item.conectado ? 'status-online' : 'status-offline'">
+            ● {{ item.conectado ? 'Online' : 'Offline' }}
+          </span>
+        </div>
+      </div>
+
+      <div class="card-item-actions">
+        <button (click)="EditUser(item.id)" class="btn btn-info btn-sm">
+          <i class="bi bi-pencil-square"></i> Edit
+        </button>
+        <button (click)="DeleteUser(item.id)" class="btn btn-danger btn-sm">
+          <i class="bi bi-trash3-fill"></i> Delete
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

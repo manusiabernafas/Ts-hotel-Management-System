@@ -1,0 +1,88 @@
+<div class="brutal-dashboard">
+  <!-- Page Header -->
+  <div class="dashboard-header mb-4">
+    <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
+      <div>
+        <span class="badge-brutal-pink mb-2">ANALYTICS & METRICS</span>
+        <h2 class="dash-title">HOTEL OVERVIEW & REVENUE</h2>
+      </div>
+      <div class="revenue-badge">
+        <span class="rev-label">TOTAL REVENUE</span>
+        <span class="rev-amount">${{ recaudado }} USD</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Metric Cards Grid -->
+  <div class="row g-4 mb-4">
+    <!-- Stat 1: Rooms -->
+    <div class="col-12 col-md-4">
+      <div class="brutal-stat-card card-blue">
+        <div class="stat-icon-wrapper">
+          <i class="bi bi-door-open-fill"></i>
+        </div>
+        <div class="stat-info">
+          <span class="stat-label">TOTAL ROOMS</span>
+          <h3 class="stat-number">{{ habitaciones.length }}</h3>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stat 2: Users -->
+    <div class="col-12 col-md-4">
+      <div class="brutal-stat-card card-pink">
+        <div class="stat-icon-wrapper">
+          <i class="bi bi-people-fill"></i>
+        </div>
+        <div class="stat-info">
+          <span class="stat-label">GUEST ACCOUNTS</span>
+          <h3 class="stat-number">{{ users.length }}</h3>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stat 3: Reservations -->
+    <div class="col-12 col-md-4">
+      <div class="brutal-stat-card card-yellow">
+        <div class="stat-icon-wrapper">
+          <i class="bi bi-calendar-check-fill"></i>
+        </div>
+        <div class="stat-info">
+          <span class="stat-label">BOOKINGS MADE</span>
+          <h3 class="stat-number">{{ reservations.length }}</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Chart Card Window -->
+  <div class="brutal-chart-window">
+    <div class="chart-window-bar">
+      <div class="window-controls">
+        <span class="control-dot dot-red"></span>
+        <span class="control-dot dot-yellow"></span>
+        <span class="control-dot dot-green"></span>
+      </div>
+      <div class="chart-window-title">📊 PERFORMANCE DATA METRICS</div>
+      <span class="badge-brutal-blue">LIVE DATA</span>
+    </div>
+    <div class="chart-window-body">
+      <div class="chart-responsive-wrapper">
+        <ngx-charts-bar-vertical
+          [view]="[850, 360]"
+          [results]="data"
+          [gradient]="gradient"
+          [xAxis]="showXAxis"
+          [yAxis]="showYAxis"
+          [legend]="showLegend"
+          [showXAxisLabel]="showXAxisLabel"
+          [showYAxisLabel]="showYAxisLabel"
+          [xAxisLabel]="xAxisLabel"
+          [yAxisLabel]="yAxisLabel"
+          [legendTitle]="legendTitle"
+        >
+        </ngx-charts-bar-vertical>
+      </div>
+    </div>
+  </div>
+</div>

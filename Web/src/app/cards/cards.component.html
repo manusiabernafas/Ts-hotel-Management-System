@@ -1,0 +1,51 @@
+<div [id]="id" class="brutal-room-card h-100" *ngIf="id != null || Price != null">
+  <!-- Card Header Strip -->
+  <div class="brutal-card-header">
+    <div class="room-title">
+      <i class="bi bi-door-open-fill me-1"></i>
+      <span>ROOM #{{ id || '01' }}</span>
+    </div>
+    <span class="badge-capacity">
+      <i class="bi bi-people-fill me-1"></i> {{ romsize || '2' }} Guests
+    </span>
+  </div>
+
+  <!-- Image Section -->
+  <div class="brutal-image-wrapper">
+    <img *ngIf="image != null; else elseimage" [src]="image" class="brutal-room-img" alt="Hotel Room">
+    <ng-template #elseimage>
+      <img src="assets/images.jpg" class="brutal-room-img" alt="Hotel Room">
+    </ng-template>
+    <div class="price-tag-floating">
+      <span class="currency">$</span>{{ Price || '120' }} <span class="per-night">/night</span>
+    </div>
+  </div>
+
+  <!-- Card Body -->
+  <div class="brutal-card-body">
+    <div class="room-specs mb-3">
+      <div class="spec-item">
+        <i class="bi bi-arrows-fullscreen"></i>
+        <span>Room Size: <strong>{{ romsize }} Persons</strong></span>
+      </div>
+      <div class="spec-item" *ngIf="body">
+        <i class="bi bi-info-circle"></i>
+        <span>{{ body }}</span>
+      </div>
+    </div>
+
+    <!-- Actions / Status -->
+    <div class="card-action-footer">
+      <div *ngIf="reservada; else elseBlock" class="status-reserved">
+        <i class="bi bi-slash-circle-fill me-1"></i> BOOKED OUT
+      </div>
+
+      <ng-template #elseBlock>
+        <button class="btn-brutal-reserve w-100" (click)="openModal()">
+          <span>Reserve Room</span>
+          <i class="bi bi-arrow-right-short fs-4"></i>
+        </button>
+      </ng-template>
+    </div>
+  </div>
+</div>

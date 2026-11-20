@@ -1,0 +1,33 @@
+<div class="brutal-sidebar">
+  <!-- Brand Header -->
+  <div class="sidebar-brand-box">
+    <div class="sidebar-brand-icon">🏨</div>
+    <div class="sidebar-brand-title">TS ADMIN</div>
+    <div class="sidebar-brand-sub">CONTROL CENTER</div>
+  </div>
+
+  <div class="sidebar-nav-list">
+    <a [routerLink]="'balance'" routerLinkActive="active" class="sidebar-link">
+      <i class="bi bi-speedometer2"></i>
+      <span>Dashboard</span>
+    </a>
+    <a [routerLink]="'reservationsedit'" routerLinkActive="active" class="sidebar-link">
+      <i class="bi bi-calendar3-range"></i>
+      <span>Bookings</span>
+    </a>
+    <a [routerLink]="'useredit'" routerLinkActive="active" class="sidebar-link">
+      <i class="bi bi-people-fill"></i>
+      <span>Guest Accounts</span>
+    </a>
+    <a [routerLink]="'rommsedit'" routerLinkActive="active" class="sidebar-link">
+      <i class="bi bi-door-open-fill"></i>
+      <span>Rooms Suite</span>
+    </a>
+  </div>
+
+  <div class="sidebar-footer-box">
+    <a [routerLink]="['/home']" class="btn-return-home">
+      <i class="bi bi-arrow-left-circle-fill me-1"></i> Public Site
+    </a>
+  </div>
+</div>

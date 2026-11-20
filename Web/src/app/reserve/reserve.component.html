@@ -1,0 +1,107 @@
+<div class="brutal-reserve-page">
+  <div *ngIf="id == null; else a">
+    <!-- Header -->
+    <div class="brutal-section-header mb-4">
+      <div class="d-flex align-items-center justify-content-between flex-wrap gap-2">
+        <div>
+          <span class="badge-brutal-pink mb-2">MY ACCOUNT</span>
+          <h2 class="page-title m-0">ACTIVE RESERVATIONS</h2>
+        </div>
+        <a [routerLink]="['/home', 'default']" class="btn btn-primary">
+          <i class="bi bi-plus-circle me-1"></i> Book Another Room
+        </a>
+      </div>
+    </div>
+
+    <!-- Booking Cards Container -->
+    <div *ngIf="myreserves && myreserves.length > 0; else noReserves" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+      <div class="col" *ngFor="let item of myreserves">
+        <app-reservation-card
+          [id]="item.id_habitacion"
+          [Price]="item.preciototal"
+          [entrada]="item.fecha_entrada.toString()"
+          [salida]="item.fecha_salida.toString()"
+        ></app-reservation-card>
+      </div>
+    </div>
+
+    <ng-template #noReserves>
+      <div class="empty-state-brutal text-center p-5">
+        <div class="empty-icon mb-3">🛎️</div>
+        <h3>No Reservations Found</h3>
+        <p class="text-muted">You haven't booked any rooms yet. Check out our available rooms!</p>
+        <a [routerLink]="['/home', 'default']" class="btn btn-success mt-2">
+          <i class="bi bi-search me-1"></i> Explore Available Rooms
+        </a>
+      </div>
+    </ng-template>
+  </div>
+
+  <ng-template #a>
+    <div class="booking-dialog-container">
+      <div class="brutal-window-card mx-auto">
+        <!-- Titlebar -->
+        <div class="window-header header-pink">
+          <div class="window-controls">
+            <span class="control-dot dot-red"></span>
+            <span class="control-dot dot-yellow"></span>
+            <span class="control-dot dot-green"></span>
+          </div>
+          <div class="window-title">🏨 CONFIRM ROOM RESERVATION</div>
+          <div style="width: 20px;"></div>
+        </div>
+
+        <form [formGroup]="ReserveForm" (ngSubmit)="onSubmit()" class="window-body">
+          <!-- Room Summary Box -->
+          <div class="room-summary-box mb-4">
+            <div class="summary-item">
+              <span class="summary-label">Capacity</span>
+              <span class="summary-value"><i class="bi bi-people-fill me-1"></i> {{ numero_huspedes }} Persons</span>
+            </div>
+            <div class="summary-divider"></div>
+            <div class="summary-item">
+              <span class="summary-label">Total Price</span>
+              <span class="summary-value price-text">$ {{ preciototal }} USD</span>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="fechae" class="form-label">Check-In Date</label>
+            <input
+              type="date"
+              class="form-control"
+              formControlName="fechae"
+              id="fechae"
+            />
+          </div>
+
+          <div class="mb-3">
+            <label for="fechas" class="form-label">Check-Out Date</label>
+            <input
+              type="date"
+              formControlName="fechas"
+              class="form-control"
+              id="fechas"
+            />
+          </div>
+
+          <div *ngIf="error != null" class="alert alert-danger mb-3">
+            <i class="bi bi-exclamation-triangle-fill me-2"></i> {{ error }}
+          </div>
+          <div *ngIf="correct != null" class="alert alert-info mb-3">
+            <i class="bi bi-check-circle-fill me-2"></i> {{ correct }}
+          </div>
+
+          <div class="window-footer d-flex gap-2 justify-content-end mt-4">
+            <button type="submit" class="btn btn-success">
+              <i class="bi bi-credit-card-fill me-1"></i> Complete Booking
+            </button>
+            <a [routerLink]="['/home', 'default']" class="btn btn-secondary">
+              Cancel
+            </a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </ng-template>
+</div>

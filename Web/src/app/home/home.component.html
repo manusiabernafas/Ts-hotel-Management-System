@@ -1,0 +1,88 @@
+<div class="brutal-home-container">
+  <!-- Hero Section -->
+  <div class="brutal-hero-banner mb-4">
+    <div class="row align-items-center">
+      <div class="col-lg-8">
+        <div class="hero-badge mb-2">
+          <span class="badge-dot"></span>
+          <span>NEO-BRUTALISM EDITION • PASTEL PINK & BLUE</span>
+        </div>
+        <h1 class="hero-title">STAY IN STYLE, EXPERIENCE LUXURY</h1>
+        <p class="hero-desc">
+          Modern hotel management system featuring retro neo-brutalist aesthetics, real-time reservations, and seamless guest experiences.
+        </p>
+        <div class="hero-tags d-flex flex-wrap gap-2 mt-3">
+          <span class="tag-item tag-pink"><i class="bi bi-stars me-1"></i> Neo-Brutalism</span>
+          <span class="tag-item tag-blue"><i class="bi bi-clock-history me-1"></i> Instant Booking</span>
+          <span class="tag-item tag-yellow"><i class="bi bi-shield-check me-1"></i> Verified Stays</span>
+        </div>
+      </div>
+      <div class="col-lg-4 text-center mt-3 mt-lg-0">
+        <div class="hero-sticker-card">
+          <div class="sticker-heading">TODAY'S SPECIAL</div>
+          <div class="sticker-highlight">30% OFF</div>
+          <div class="sticker-caption">On All Deluxe Pastel Suites</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section Header -->
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <div>
+      <h2 class="section-title mb-1">AVAILABLE ROOMS & SUITES</h2>
+      <p class="text-muted section-subtitle mb-0">Browse through our room selection below and book instantly.</p>
+    </div>
+  </div>
+
+  <!-- Rooms Grid -->
+  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+    <!-- Dynamic rooms from API -->
+    <ng-container *ngIf="rooms && rooms.length > 0; else sampleRooms">
+      <div class="col" *ngFor="let item of rooms">
+        <app-cards
+          [reservada]="item.reservada"
+          [id]="item.id"
+          [romsize]="item.cantdepersonas"
+          [Price]="item.precio"
+          [image]="item.image"
+          [body]="item.descripcion"
+        ></app-cards>
+      </div>
+    </ng-container>
+
+    <!-- Fallback/Sample showcase cards when API is empty or offline -->
+    <ng-template #sampleRooms>
+      <div class="col">
+        <app-cards
+          [id]="1"
+          [romsize]="'2'"
+          [Price]="'120'"
+          [reservada]="false"
+          [image]="'assets/images.jpg'"
+          [body]="'Cozy pastel room with queen bed, ensuite bath, and city skyline view.'"
+        ></app-cards>
+      </div>
+      <div class="col">
+        <app-cards
+          [id]="2"
+          [romsize]="'4'"
+          [Price]="'240'"
+          [reservada]="true"
+          [image]="'assets/images.jpg'"
+          [body]="'Spacious family suite with balcony, two double beds, and mini bar.'"
+        ></app-cards>
+      </div>
+      <div class="col">
+        <app-cards
+          [id]="3"
+          [romsize]="'1'"
+          [Price]="'95'"
+          [reservada]="false"
+          [image]="'assets/images.jpg'"
+          [body]="'Single business studio with high-speed Wi-Fi and ergonomic workspace.'"
+        ></app-cards>
+      </div>
+    </ng-template>
+  </div>
+</div>

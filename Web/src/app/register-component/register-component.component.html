@@ -1,0 +1,152 @@
+<div *ngIf="dialogRef; else elsenomodal">
+  <div class="modal-overlay">
+    <div class="brutal-window-card">
+      <!-- Window Title Bar -->
+      <div class="window-header header-blue">
+        <div class="window-controls">
+          <span class="control-dot dot-red"></span>
+          <span class="control-dot dot-yellow"></span>
+          <span class="control-dot dot-green"></span>
+        </div>
+        <div class="window-title">📝 CREATE NEW ACCOUNT</div>
+        <button type="button" class="btn-close-window" (click)="close()">✕</button>
+      </div>
+
+      <!-- Form Content -->
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="window-body">
+        <div class="mb-3">
+          <label for="reg-modal-username" class="form-label">Username</label>
+          <div class="input-group-brutal">
+            <span class="input-icon icon-pink"><i class="bi bi-person-badge-fill"></i></span>
+            <input
+              type="text"
+              formControlName="username"
+              class="form-control"
+              id="reg-modal-username"
+              placeholder="Choose a username"
+            />
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="reg-modal-password" class="form-label">Password</label>
+          <div class="input-group-brutal">
+            <span class="input-icon icon-pink"><i class="bi bi-lock-fill"></i></span>
+            <input
+              type="password"
+              class="form-control"
+              formControlName="password"
+              id="reg-modal-password"
+              placeholder="Choose a strong password"
+            />
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="reg-modal-mail" class="form-label">Email Address</label>
+          <div class="input-group-brutal">
+            <span class="input-icon icon-pink"><i class="bi bi-envelope-fill"></i></span>
+            <input
+              type="email"
+              class="form-control"
+              formControlName="mail"
+              id="reg-modal-mail"
+              placeholder="name@example.com"
+            />
+          </div>
+        </div>
+
+        <div *ngIf="error != null" class="alert alert-danger mb-3">
+          <i class="bi bi-exclamation-triangle-fill me-2"></i> {{ error }}
+        </div>
+        <div *ngIf="correct != null" class="alert alert-info mb-3">
+          <i class="bi bi-check-circle-fill me-2"></i> {{ correct }}
+        </div>
+
+        <div class="window-footer d-flex flex-wrap gap-2 justify-content-end mt-4">
+          <button type="submit" class="btn btn-primary">
+            <i class="bi bi-check2-circle"></i> Complete Registration
+          </button>
+          <button type="button" (click)="close()" class="btn btn-secondary">
+            Cancel
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<ng-template #elsenomodal>
+  <div class="standalone-login-container">
+    <div class="brutal-window-card mx-auto">
+      <!-- Window Title Bar -->
+      <div class="window-header header-blue">
+        <div class="window-controls">
+          <span class="control-dot dot-red"></span>
+          <span class="control-dot dot-yellow"></span>
+          <span class="control-dot dot-green"></span>
+        </div>
+        <div class="window-title">📝 CREATE NEW ACCOUNT</div>
+        <div style="width: 20px;"></div>
+      </div>
+
+      <!-- Form Content -->
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="window-body">
+        <div class="mb-3">
+          <label for="reg-username" class="form-label">Username</label>
+          <div class="input-group-brutal">
+            <span class="input-icon icon-pink"><i class="bi bi-person-badge-fill"></i></span>
+            <input
+              type="text"
+              formControlName="username"
+              class="form-control"
+              id="reg-username"
+              placeholder="Choose a username"
+            />
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="reg-password" class="form-label">Password</label>
+          <div class="input-group-brutal">
+            <span class="input-icon icon-pink"><i class="bi bi-lock-fill"></i></span>
+            <input
+              type="password"
+              class="form-control"
+              formControlName="password"
+              id="reg-password"
+              placeholder="Choose a strong password"
+            />
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="reg-mail" class="form-label">Email Address</label>
+          <div class="input-group-brutal">
+            <span class="input-icon icon-pink"><i class="bi bi-envelope-fill"></i></span>
+            <input
+              type="email"
+              class="form-control"
+              formControlName="mail"
+              id="reg-mail"
+              placeholder="name@example.com"
+            />
+          </div>
+        </div>
+
+        <div *ngIf="error != null" class="alert alert-danger mb-3">
+          <i class="bi bi-exclamation-triangle-fill me-2"></i> {{ error }}
+        </div>
+        <div *ngIf="correct != null" class="alert alert-info mb-3">
+          <i class="bi bi-check-circle-fill me-2"></i> {{ correct }}
+        </div>
+
+        <div class="window-footer d-flex flex-wrap gap-2 justify-content-end mt-4">
+          <button type="submit" class="btn btn-primary">
+            <i class="bi bi-check2-circle"></i> Complete Registration
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</ng-template>

@@ -1,0 +1,50 @@
+<div class="brutal-management-page">
+  <!-- Top Bar -->
+  <div class="section-top-bar mb-4">
+    <div>
+      <span class="badge-brutal-blue mb-2">RESERVATION LOGS</span>
+      <h2 class="page-title m-0">ALL BOOKING SCHEDULES</h2>
+    </div>
+    <div class="record-count-badge">
+      <i class="bi bi-calendar-week me-1"></i> {{ reservations.length }} Bookings
+    </div>
+  </div>
+
+  <!-- Reservation Cards List -->
+  <div class="d-flex flex-column gap-3">
+    <div class="brutal-list-card" *ngFor="let item of reservations">
+      <div class="card-item-left">
+        <div class="res-icon-box">
+          <i class="bi bi-calendar-check-fill"></i>
+        </div>
+        <div class="res-main-info">
+          <h4 class="res-guest-name mb-1">
+            <i class="bi bi-person-fill text-muted me-1"></i>
+            {{ getUsernameForReservation(item.id_cliente) || 'Guest #' + item.id_cliente }}
+          </h4>
+          <div class="d-flex flex-wrap gap-2 text-muted schedule-dates">
+            <span><i class="bi bi-box-arrow-in-right text-success me-1"></i>In: <strong>{{ item.fecha_entrada }}</strong></span>
+            <span>•</span>
+            <span><i class="bi bi-box-arrow-right text-danger me-1"></i>Out: <strong>{{ item.fecha_salida }}</strong></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-item-center">
+        <div class="price-badge-pill">
+          <span class="price-label">Total:</span>
+          <span class="price-val">${{ item.preciototal }} <small>USD</small></span>
+        </div>
+      </div>
+
+      <div class="card-item-actions">
+        <button (click)="editReservation(item)" class="btn btn-info btn-sm">
+          <i class="bi bi-pencil-square"></i> Edit
+        </button>
+        <button (click)="deleteReservation(item.id, item.id_habitacion)" class="btn btn-danger btn-sm">
+          <i class="bi bi-x-circle-fill"></i> Cancel
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

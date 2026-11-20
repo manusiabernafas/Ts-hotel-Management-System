@@ -1,0 +1,151 @@
+.brutal-dashboard {
+  max-width: 1200px;
+}
+
+.dash-title {
+  font-family: var(--font-main, 'Space Grotesk', sans-serif);
+  font-weight: 900;
+  font-size: 2rem;
+  letter-spacing: -0.5px;
+  color: #121212;
+  margin: 0;
+}
+
+.revenue-badge {
+  background-color: var(--brutal-yellow, #FEF08A);
+  border: 3px solid #121212;
+  border-radius: 10px;
+  padding: 10px 18px;
+  box-shadow: 4px 4px 0px #121212;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.rev-label {
+  font-family: var(--font-mono, monospace);
+  font-weight: 800;
+  font-size: 0.75rem;
+  color: #555;
+}
+
+.rev-amount {
+  font-family: var(--font-mono, monospace);
+  font-weight: 900;
+  font-size: 1.5rem;
+  color: #121212;
+}
+
+.brutal-stat-card {
+  border: 3px solid #121212;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 5px 5px 0px #121212;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.brutal-stat-card:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 8px 8px 0px #121212;
+}
+
+.card-blue {
+  background-color: var(--brutal-blue, #A2D2FF);
+}
+
+.card-pink {
+  background-color: var(--brutal-pink, #FFB3C6);
+}
+
+.card-yellow {
+  background-color: var(--brutal-yellow, #FEF08A);
+}
+
+.stat-icon-wrapper {
+  background-color: #FFFFFF;
+  border: 2.5px solid #121212;
+  border-radius: 10px;
+  width: 58px;
+  height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  box-shadow: 3px 3px 0px #121212;
+}
+
+.stat-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-label {
+  font-family: var(--font-mono, monospace);
+  font-weight: 800;
+  font-size: 0.8rem;
+  letter-spacing: 0.5px;
+  color: #222;
+}
+
+.stat-number {
+  font-family: var(--font-main, 'Space Grotesk', sans-serif);
+  font-weight: 900;
+  font-size: 2.5rem;
+  line-height: 1.1;
+  color: #121212;
+  margin: 0;
+}
+
+.brutal-chart-window {
+  background-color: #FFFFFF;
+  border: 3.5px solid #121212;
+  border-radius: 14px;
+  box-shadow: 7px 7px 0px #121212;
+  overflow: hidden;
+}
+
+.chart-window-bar {
+  background-color: var(--brutal-blue-light, #E7F5FF);
+  border-bottom: 3px solid #121212;
+  padding: 12px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.window-controls {
+  display: flex;
+  gap: 6px;
+}
+
+.control-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 1.5px solid #121212;
+}
+
+.dot-red { background-color: #FFA8A8; }
+.dot-yellow { background-color: #FEF08A; }
+.dot-green { background-color: #B7E4C7; }
+
+.chart-window-title {
+  font-family: var(--font-mono, monospace);
+  font-weight: 800;
+  font-size: 0.95rem;
+  color: #121212;
+}
+
+.chart-window-body {
+  padding: 24px;
+  background-color: #FFFFFF;
+  overflow-x: auto;
+}
+
+.chart-responsive-wrapper {
+  display: flex;
+  justify-content: center;
+}

@@ -1,0 +1,110 @@
+.brutal-sidebar {
+  height: 100vh;
+  width: 240px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: var(--brutal-blue-light, #E7F5FF);
+  border-right: 3px solid #121212;
+  box-shadow: 4px 0px 0px #121212;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 24px 16px;
+  z-index: 999;
+}
+
+.sidebar-brand-box {
+  background-color: var(--brutal-pink, #FFB3C6);
+  border: 3px solid #121212;
+  border-radius: 10px;
+  padding: 16px 12px;
+  text-align: center;
+  box-shadow: 4px 4px 0px #121212;
+  margin-bottom: 24px;
+}
+
+.sidebar-brand-icon {
+  font-size: 2rem;
+  margin-bottom: 4px;
+}
+
+.sidebar-brand-title {
+  font-family: var(--font-main, 'Space Grotesk', sans-serif);
+  font-weight: 900;
+  font-size: 1.25rem;
+  color: #121212;
+  letter-spacing: -0.5px;
+}
+
+.sidebar-brand-sub {
+  font-family: var(--font-mono, monospace);
+  font-weight: 700;
+  font-size: 0.65rem;
+  letter-spacing: 1px;
+  color: #333;
+}
+
+.sidebar-nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex-grow: 1;
+}
+
+.sidebar-link {
+  font-family: var(--font-main, 'Space Grotesk', sans-serif);
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #121212;
+  background-color: #FFFFFF;
+  border: 2.5px solid #121212;
+  border-radius: 8px;
+  padding: 10px 14px;
+  box-shadow: 3px 3px 0px #121212;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  transition: all 0.12s ease;
+}
+
+.sidebar-link i {
+  font-size: 1.15rem;
+}
+
+.sidebar-link:hover {
+  background-color: var(--brutal-pink, #FFB3C6);
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0px #121212;
+  color: #121212;
+}
+
+.sidebar-link.active {
+  background-color: var(--brutal-blue, #A2D2FF);
+  transform: translate(1px, 1px);
+  box-shadow: 2px 2px 0px #121212;
+}
+
+.btn-return-home {
+  font-family: var(--font-main, 'Space Grotesk', sans-serif);
+  font-weight: 700;
+  font-size: 0.9rem;
+  background-color: #121212;
+  color: #FFFFFF !important;
+  border: 2px solid #121212;
+  border-radius: 8px;
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 3px 3px 0px var(--brutal-pink);
+  transition: all 0.12s ease;
+  text-decoration: none;
+}
+
+.btn-return-home:hover {
+  background-color: #2b2b2b;
+  color: var(--brutal-pink) !important;
+  transform: translate(-2px, -2px);
+}

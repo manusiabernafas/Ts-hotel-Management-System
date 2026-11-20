@@ -1,0 +1,250 @@
+/* Neo-Brutalism System: Pastel Pink & Blue Theme */
+@import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+@import "../node_modules/bootstrap-icons/font/bootstrap-icons.css";
+
+:root {
+  /* Neo-Brutalism Pastel Palette */
+  --brutal-pink: #FFB3C6;
+  --brutal-pink-light: #FFE5EC;
+  --brutal-pink-subtle: #FFF0F5;
+  --brutal-pink-dark: #FF6584;
+
+  --brutal-blue: #A2D2FF;
+  --brutal-blue-light: #E7F5FF;
+  --brutal-blue-subtle: #F0F7FF;
+  --brutal-blue-dark: #2563EB;
+
+  --brutal-yellow: #FEF08A;
+  --brutal-green: #B7E4C7;
+  --brutal-danger: #FFA8A8;
+
+  --brutal-bg: #FFF7F9;
+  --brutal-surface: #FFFFFF;
+  --brutal-black: #121212;
+
+  /* Brutalist Shapes & Shadows */
+  --brutal-border: 3px solid #121212;
+  --brutal-border-sm: 2px solid #121212;
+  --brutal-radius: 10px;
+  --brutal-shadow: 4px 4px 0px #121212;
+  --brutal-shadow-lg: 6px 6px 0px #121212;
+  --brutal-shadow-sm: 2px 2px 0px #121212;
+  --brutal-shadow-hover: 7px 7px 0px #121212;
+
+  /* Typography */
+  --font-main: 'Space Grotesk', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-main);
+  background-color: var(--brutal-bg);
+  background-image: 
+    radial-gradient(#A2D2FF 1px, transparent 1px),
+    radial-gradient(#FFB3C6 1px, var(--brutal-bg) 1px);
+  background-size: 40px 40px;
+  background-position: 0 0, 20px 20px;
+  color: var(--brutal-black);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-main);
+  font-weight: 800;
+  color: var(--brutal-black);
+  letter-spacing: -0.5px;
+}
+
+/* Links */
+a {
+  color: var(--brutal-black);
+  text-decoration: none;
+  font-weight: 700;
+  transition: all 0.15s ease-in-out;
+}
+
+a:hover {
+  color: var(--brutal-blue-dark);
+}
+
+/* Neo-Brutalist Buttons */
+button, .btn {
+  font-family: var(--font-main);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border: var(--brutal-border) !important;
+  border-radius: var(--brutal-radius) !important;
+  box-shadow: var(--brutal-shadow);
+  padding: 8px 18px;
+  cursor: pointer;
+  transition: transform 0.1s ease, box-shadow 0.1s ease, background-color 0.15s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+button:hover, .btn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: var(--brutal-shadow-hover);
+}
+
+button:active, .btn:active {
+  transform: translate(2px, 2px) !important;
+  box-shadow: var(--brutal-shadow-sm) !important;
+}
+
+.btn-primary {
+  background-color: var(--brutal-blue) !important;
+  color: var(--brutal-black) !important;
+}
+
+.btn-primary:hover {
+  background-color: #8ec5fc !important;
+  color: var(--brutal-black) !important;
+}
+
+.btn-success {
+  background-color: var(--brutal-pink) !important;
+  color: var(--brutal-black) !important;
+}
+
+.btn-success:hover {
+  background-color: #ffa3bc !important;
+  color: var(--brutal-black) !important;
+}
+
+.btn-danger, .bg-danger {
+  background-color: var(--brutal-danger) !important;
+  color: var(--brutal-black) !important;
+  border: var(--brutal-border) !important;
+}
+
+.btn-info, .bg-info {
+  background-color: var(--brutal-blue) !important;
+  color: var(--brutal-black) !important;
+  border: var(--brutal-border) !important;
+}
+
+.btn-warning, .bg-warning {
+  background-color: var(--brutal-yellow) !important;
+  color: var(--brutal-black) !important;
+  border: var(--brutal-border) !important;
+}
+
+/* Neo-Brutalist Cards */
+.card {
+  background-color: var(--brutal-surface);
+  border: var(--brutal-border) !important;
+  border-radius: var(--brutal-radius) !important;
+  box-shadow: var(--brutal-shadow-lg) !important;
+  overflow: hidden;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.card:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 8px 8px 0px #121212 !important;
+}
+
+/* Neo-Brutalist Form Inputs */
+.form-control, input[type="text"], input[type="password"], input[type="datetime"], input[type="number"], select, textarea {
+  border: var(--brutal-border) !important;
+  border-radius: var(--brutal-radius) !important;
+  background-color: #FFFFFF !important;
+  color: var(--brutal-black) !important;
+  font-family: var(--font-mono);
+  font-weight: 600;
+  padding: 10px 14px !important;
+  box-shadow: var(--brutal-shadow-sm) !important;
+  transition: border-color 0.15s, box-shadow 0.15s, background-color 0.15s;
+}
+
+.form-control:focus, input:focus, select:focus, textarea:focus {
+  outline: none !important;
+  background-color: var(--brutal-blue-light) !important;
+  border: var(--brutal-border) !important;
+  box-shadow: 4px 4px 0px #121212 !important;
+}
+
+label, .form-label {
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+  color: var(--brutal-black);
+  margin-bottom: 6px;
+  display: block;
+}
+
+/* Neo-Brutalist Alerts */
+.alert {
+  border: var(--brutal-border) !important;
+  border-radius: var(--brutal-radius) !important;
+  box-shadow: var(--brutal-shadow) !important;
+  font-weight: 700;
+  color: var(--brutal-black) !important;
+}
+
+.alert-danger {
+  background-color: var(--brutal-danger) !important;
+}
+
+.alert-info {
+  background-color: var(--brutal-blue-light) !important;
+}
+
+/* Custom Neo-Brutalist Badges */
+.badge-brutal-pink {
+  background-color: var(--brutal-pink);
+  color: var(--brutal-black);
+  border: var(--brutal-border-sm);
+  border-radius: 6px;
+  padding: 4px 10px;
+  font-weight: 800;
+  font-size: 0.8rem;
+  display: inline-block;
+  box-shadow: 2px 2px 0px #121212;
+}
+
+.badge-brutal-blue {
+  background-color: var(--brutal-blue);
+  color: var(--brutal-black);
+  border: var(--brutal-border-sm);
+  border-radius: 6px;
+  padding: 4px 10px;
+  font-weight: 800;
+  font-size: 0.8rem;
+  display: inline-block;
+  box-shadow: 2px 2px 0px #121212;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--brutal-pink-light);
+  border-left: 2px solid var(--brutal-black);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--brutal-blue);
+  border: 2px solid var(--brutal-black);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--brutal-pink);
+}

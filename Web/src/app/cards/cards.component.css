@@ -1,0 +1,162 @@
+.brutal-room-card {
+  background-color: #FFFFFF;
+  border: 3px solid #121212;
+  border-radius: 12px;
+  box-shadow: 6px 6px 0px #121212;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.brutal-room-card:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 9px 9px 0px #121212;
+}
+
+.brutal-card-header {
+  background-color: var(--brutal-pink, #FFB3C6);
+  border-bottom: 3px solid #121212;
+  padding: 12px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.room-title {
+  font-family: var(--font-main, 'Space Grotesk', sans-serif);
+  font-weight: 800;
+  font-size: 1.1rem;
+  letter-spacing: -0.5px;
+  color: #121212;
+  display: flex;
+  align-items: center;
+}
+
+.badge-capacity {
+  background-color: var(--brutal-blue, #A2D2FF);
+  border: 2px solid #121212;
+  border-radius: 6px;
+  padding: 3px 10px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #121212;
+  box-shadow: 2px 2px 0px #121212;
+  font-family: var(--font-mono, monospace);
+}
+
+.brutal-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  border-bottom: 3px solid #121212;
+  overflow: hidden;
+  background-color: var(--brutal-blue-light, #E7F5FF);
+}
+
+.brutal-room-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.brutal-room-card:hover .brutal-room-img {
+  transform: scale(1.04);
+}
+
+.price-tag-floating {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  background-color: var(--brutal-yellow, #FEF08A);
+  color: #121212;
+  border: 2.5px solid #121212;
+  border-radius: 8px;
+  padding: 6px 12px;
+  font-family: var(--font-mono, monospace);
+  font-weight: 800;
+  font-size: 1.1rem;
+  box-shadow: 3px 3px 0px #121212;
+}
+
+.price-tag-floating .currency {
+  font-size: 0.9rem;
+  margin-right: 2px;
+}
+
+.price-tag-floating .per-night {
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.brutal-card-body {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: space-between;
+}
+
+.room-specs {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.spec-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+  color: #333333;
+}
+
+.spec-item i {
+  color: var(--brutal-blue-dark, #2563EB);
+  font-size: 1rem;
+}
+
+.card-action-footer {
+  margin-top: 12px;
+}
+
+.btn-brutal-reserve {
+  background-color: var(--brutal-blue, #A2D2FF);
+  color: #121212;
+  border: 3px solid #121212;
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-weight: 800;
+  font-size: 1rem;
+  box-shadow: 4px 4px 0px #121212;
+  transition: all 0.1s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.btn-brutal-reserve:hover {
+  background-color: var(--brutal-pink, #FFB3C6);
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px #121212;
+}
+
+.btn-brutal-reserve:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px #121212;
+}
+
+.status-reserved {
+  background-color: var(--brutal-danger, #FFA8A8);
+  color: #121212;
+  border: 2.5px solid #121212;
+  border-radius: 8px;
+  padding: 10px;
+  font-weight: 800;
+  text-align: center;
+  font-family: var(--font-mono, monospace);
+  letter-spacing: 0.5px;
+  box-shadow: 3px 3px 0px #121212;
+}

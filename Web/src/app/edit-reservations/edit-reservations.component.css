@@ -1,0 +1,106 @@
+.brutal-management-page {
+  max-width: 1200px;
+}
+
+.section-top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.page-title {
+  font-family: var(--font-main, 'Space Grotesk', sans-serif);
+  font-weight: 900;
+  font-size: 2rem;
+  letter-spacing: -0.5px;
+  color: #121212;
+}
+
+.record-count-badge {
+  background-color: var(--brutal-yellow, #FEF08A);
+  border: 2.5px solid #121212;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-family: var(--font-mono, monospace);
+  font-weight: 800;
+  box-shadow: 3px 3px 0px #121212;
+}
+
+.brutal-list-card {
+  background-color: #FFFFFF;
+  border: 3px solid #121212;
+  border-radius: 12px;
+  padding: 16px 20px;
+  box-shadow: 4px 4px 0px #121212;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.brutal-list-card:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px #121212;
+}
+
+.card-item-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.res-icon-box {
+  width: 48px;
+  height: 48px;
+  background-color: var(--brutal-pink, #FFB3C6);
+  border: 2.5px solid #121212;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  box-shadow: 2px 2px 0px #121212;
+}
+
+.res-guest-name {
+  font-family: var(--font-main, 'Space Grotesk', sans-serif);
+  font-weight: 800;
+  font-size: 1.2rem;
+  color: #121212;
+}
+
+.schedule-dates {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.85rem;
+}
+
+.price-badge-pill {
+  background-color: var(--brutal-blue-light, #E7F5FF);
+  border: 2px solid #121212;
+  border-radius: 8px;
+  padding: 6px 14px;
+  font-family: var(--font-mono, monospace);
+  box-shadow: 2px 2px 0px #121212;
+}
+
+.price-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin-right: 4px;
+  color: #555;
+}
+
+.price-val {
+  font-weight: 900;
+  font-size: 1.15rem;
+  color: var(--brutal-blue-dark, #2563EB);
+}
+
+.card-item-actions {
+  display: flex;
+  gap: 10px;
+}
